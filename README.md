@@ -3,7 +3,7 @@
 Comparison of Hello world in compiled languages
 
 -   `hello.*` taken from https://drewdevault.com/2020/01/04/Slow.html
--   `python3 measure.py` puts results in `by_size.txt` and `by_build_time.txt` grouped by nearest log
+-   `python3 measure.py` puts results in `by_size.txt`, `by_build_time.txt` and `by_run_time.txt` grouped by nearest logarithm
 
 ### Compilers
 
@@ -55,7 +55,7 @@ Elf size   Obj size    Build time   Run time   Command
 -   greatly affected by running tasks
 -   nondeterministic but `gcc` and `clang` are generally slower
 -   `-static` loads faster but results in much bigger files
--   `strip` has no visible effect on performance
+-   `-s` and `strip ./hello` have no visible effect on performance
 
 ```
 Elf size   Obj size    Build time   Run time   Command
@@ -70,10 +70,10 @@ Elf size   Obj size    Build time   Run time   Command
 
 ## Conclusion
 
-|            | Run time | File Size | Build time |
-| ---------- | -------- | --------- | ---------- |
-| Zig        | okay     | best      | worst      |
-| nasm       | best     | okay      | best       |
-| gcc, clang | worst    | worst     | okay       |
+|            | File Size | Build time | Run time |
+| ---------- | --------- | ---------- | -------- |
+| Zig        | best      | worst      | okay     |
+| NASM       | okay      | best       | best     |
+| gcc, clang | worst     | okay       | worst    |
 
 -   Time to learn assembler >:]
