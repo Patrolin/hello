@@ -1,0 +1,87 @@
+Elf size   Obj size    Build time   Run time   Command
+     383 +   4,225 B       512 ms     0.5 ms   zig build-exe ./hello.zig --release-small && strip ./hello
+   1,527 +   3,761 B       256 ms     0.5 ms   zig build-exe ./hello.zig --release-small --strip
+     389 +   5,099 B       256 ms     0.5 ms   zig build-exe ./hello.zig --release-fast --strip && strip ./hello
+   1,581 +   5,099 B       256 ms     0.5 ms   zig build-exe ./hello.zig --release-fast --strip
+   8,437 +      51 B         4 ms     0.5 ms   nasm -f elf64 ./hello.S && ld ./hello.o -o ./hello && strip ./hello
+   8,481 +      87 B         8 ms     0.5 ms   nasm -f elf64 ./hello.S && gcc ./hello.o -o ./hello -static -nostartfiles -nostdlib -nodefaultlibs && strip ./hello
+   8,869 +      51 B         4 ms     0.5 ms   nasm -f elf64 ./hello.S && ld ./hello.o -o ./hello
+   8,937 +      87 B         8 ms     0.5 ms   nasm -f elf64 ./hello.S && gcc ./hello.o -o ./hello -static -nostartfiles -nostdlib -nodefaultlibs
+     519 +  11,297 B       512 ms     0.5 ms   zig build-exe ./hello.zig --release-safe --strip && strip ./hello
+   3,175 +  11,297 B       512 ms     0.5 ms   zig build-exe ./hello.zig --release-safe --strip
+     483 +  28,309 B       256 ms     0.5 ms   zig build-exe ./hello.zig --strip && strip ./hello
+  11,923 +  28,309 B       256 ms     0.5 ms   zig build-exe ./hello.zig --strip
+     463 +  73,233 B      4096 ms     0.5 ms   zig build-exe ./hello.zig --release-safe && strip ./hello
+     439 + 199,945 B       512 ms     0.5 ms   zig build-exe ./hello.zig && strip ./hello
+   4,849 + 793,631 B        64 ms     0.5 ms   gcc ./hello.c -o ./hello -static && strip ./hello
+   4,857 + 793,623 B        64 ms     0.5 ms   gcc ./hello.c -o ./hello -O2 -static -s && strip ./hello
+   5,942 + 800,754 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -static -s && strip ./hello
+   5,998 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O1 -static -s
+   5,998 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O1 -static -s && strip ./hello
+   5,998 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O2 -static -s
+   5,998 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O2 -static -s && strip ./hello
+   5,998 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O3 -static -s
+   5,998 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O3 -static -s && strip ./hello
+  78,073 + 793,631 B        64 ms     0.5 ms   gcc ./hello.c -o ./hello -static
+  78,081 + 793,623 B        64 ms     0.5 ms   gcc ./hello.c -o ./hello -O1 -static
+  79,214 + 800,754 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -static
+  79,270 + 800,698 B        64 ms     0.5 ms   clang ./hello.c -o ./hello -O3 -static
+     383 +   3,761 B       256 ms     0.6 ms   zig build-exe ./hello.zig --release-small --strip && strip ./hello
+     389 +   5,115 B       512 ms     0.6 ms   zig build-exe ./hello.zig --release-fast && strip ./hello
+   2,225 +  74,063 B       512 ms     0.6 ms   zig build-exe ./hello.zig --release-small
+   2,277 + 166,619 B       512 ms     0.6 ms   zig build-exe ./hello.zig --release-fast
+   4,849 + 793,631 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -static -s
+   4,849 + 793,631 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -static -s && strip ./hello
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O1 -static && strip ./hello
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O1 -static -s
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O1 -static -s && strip ./hello
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O2 -static && strip ./hello
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O2 -static -s
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O3 -static && strip ./hello
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O3 -static -s
+   4,857 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O3 -static -s && strip ./hello
+   5,942 + 800,754 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -static && strip ./hello
+   5,942 + 800,754 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -static -s
+   5,998 + 800,698 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -O1 -static && strip ./hello
+   5,998 + 800,698 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -O2 -static && strip ./hello
+   5,998 + 800,698 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -O3 -static && strip ./hello
+  50,047 + 761,713 B       512 ms     0.6 ms   zig build-exe ./hello.zig
+   9,058 + 804,846 B      4096 ms     0.6 ms   zig build-exe ./hello.zig --release-safe
+  78,081 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O2 -static
+  78,081 + 793,623 B        64 ms     0.6 ms   gcc ./hello.c -o ./hello -O3 -static
+  79,270 + 800,698 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -O1 -static
+  79,270 + 800,698 B        64 ms     0.6 ms   clang ./hello.c -o ./hello -O2 -static
+
+  12,633 +   1,815 B        64 ms     0.7 ms   clang ./hello.c -o ./hello -O3 && strip ./hello
+  12,633 +   1,815 B        64 ms     0.7 ms   clang ./hello.c -o ./hello -O3 -s
+  12,633 +   1,815 B        64 ms     0.7 ms   clang ./hello.c -o ./hello -O3 -s && strip ./hello
+  12,257 +   2,215 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello && strip ./hello
+  12,257 +   2,215 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -s
+  12,257 +   2,215 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -s && strip ./hello
+  12,265 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O1 && strip ./hello
+  12,265 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O1 -s
+  12,265 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O1 -s && strip ./hello
+  12,265 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O2 && strip ./hello
+  12,265 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O3 -s
+  12,265 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O3 -s && strip ./hello
+  14,729 +   1,815 B        64 ms     0.7 ms   clang ./hello.c -o ./hello -O1
+  14,729 +   1,815 B        64 ms     0.7 ms   clang ./hello.c -o ./hello -O2
+  14,729 +   1,815 B        64 ms     0.7 ms   clang ./hello.c -o ./hello -O3
+  14,481 +   2,215 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello
+  14,489 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O1
+  14,489 +   2,207 B        32 ms     0.7 ms   gcc ./hello.c -o ./hello -O2
+  12,577 +   1,871 B        64 ms     0.8 ms   clang ./hello.c -o ./hello && strip ./hello
+  12,577 +   1,871 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -s
+  12,577 +   1,871 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -s && strip ./hello
+  12,633 +   1,815 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -O1 && strip ./hello
+  12,633 +   1,815 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -O1 -s
+  12,633 +   1,815 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -O1 -s && strip ./hello
+  12,633 +   1,815 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -O2 && strip ./hello
+  12,633 +   1,815 B        64 ms     0.8 ms   clang ./hello.c -o ./hello -O2 -s && strip ./hello
+  12,265 +   2,207 B        32 ms     0.8 ms   gcc ./hello.c -o ./hello -O2 -s
+  12,265 +   2,207 B        32 ms     0.8 ms   gcc ./hello.c -o ./hello -O2 -s && strip ./hello
+  12,265 +   2,207 B        32 ms     0.8 ms   gcc ./hello.c -o ./hello -O3 && strip ./hello
+  14,673 +   1,871 B        64 ms     0.8 ms   clang ./hello.c -o ./hello
+  14,489 +   2,207 B        32 ms     0.8 ms   gcc ./hello.c -o ./hello -O3
+  12,633 +   1,815 B        64 ms     0.9 ms   clang ./hello.c -o ./hello -O2 -s
+
